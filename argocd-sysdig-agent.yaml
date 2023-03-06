@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sysdig-agent
+spec:
+  destination:
+    name: ''
+    namespace: sysdig-agent
+    server: 'https://kubernetes.default.svc'
+  sources:
+  - repoURL: 'https://charts.sysdig.com'
+    chart: sysdig-deploy
+    targetRevision: 1.5.75
+    helm:
+      valueFiles:
+      - $values/values.yaml
+  - repoURL: 'https://github.com/andrewd-sysdig/argocd-test.git'
+    targetRevision: main
+    ref: values
+  project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
