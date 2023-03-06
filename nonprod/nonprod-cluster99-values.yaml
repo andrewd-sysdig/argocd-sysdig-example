@@ -1,0 +1,6 @@
+global:
+  sysdig:
+     tags:
+       environment: non-prod
+  clusterConfig:
+     name: np-cluster99 # Name of your cluster so Sysdig can identify it

@@ -1,0 +1,6 @@
+global:
+  sysdig:
+     tags:
+       environment: production
+  clusterConfig:
+     name: prod-cluster1 # Name of your cluster so Sysdig can identify it

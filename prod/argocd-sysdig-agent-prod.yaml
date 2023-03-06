@@ -13,8 +13,9 @@ spec:
     targetRevision: 1.5.75
     helm:
       valueFiles:
-      - $values/values.yaml
-  - repoURL: 'https://github.com/andrewd-sysdig/argocd-test.git'
+      - $values/common/common-values.yaml
+      - $values/prod/prod-cluster1-values.yaml
+  - repoURL: 'https://github.com/andrewd-sysdig/argocd-sysdig-example.git'
     targetRevision: main
     ref: values
   project: default
