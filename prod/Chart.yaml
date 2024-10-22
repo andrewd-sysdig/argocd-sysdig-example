@@ -1,0 +1,4 @@
+dependencies:
+  - name: "sysdig-deploy"
+    version: "1.66.0"
+    repository: "https://charts.sysdig.com"
