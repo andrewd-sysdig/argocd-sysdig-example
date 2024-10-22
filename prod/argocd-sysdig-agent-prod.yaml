@@ -10,7 +10,7 @@ spec:
   sources:
   - repoURL: 'https://charts.sysdig.com'
     chart: sysdig-deploy
-    targetRevision: 1.5.75
+    targetRevision: 1.66.0
     helm:
       valueFiles:
       - $values/common/common-clustersheild-values.yaml

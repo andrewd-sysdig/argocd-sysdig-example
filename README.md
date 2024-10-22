@@ -19,5 +19,5 @@ Now clone this repo and apply the ArgoCD Application
 
 ```sh
 git clone https://github.com/andrewd-sysdig/argocd-sysdig-example.git
-kubectl apply -f ~/prod/argocd-sysdig-agent-prod.yaml
+kubectl apply -f prod/argocd-sysdig-agent-prod.yaml
 ```
