@@ -13,7 +13,7 @@ spec:
     kind: Secret
     name: sysdig-clustershield
   - jsonPointers:
-    - /data/=
+    - /data
     kind: Secret
     name: sysdig-clustershield-tls-certs
   sources:
@@ -23,7 +23,7 @@ spec:
     helm:
       valueFiles:
       - $values/common/common-clustersheild-values.yaml
-      - $values/prod/prod-cluster1-values.yaml
+      - $values/prod/prod-cluster-values.yaml
   - repoURL: 'https://github.com/andrewd-sysdig/argocd-sysdig-example.git'
     targetRevision: main
     ref: values

@@ -1,8 +1,7 @@
 global:
   sysdig:
-     accessKeySecret: sysdig-agent # Access Key Secret - from <sysdig URL>/secure/#/settings/agentInstallation
+     accessKeySecret: sysdig-agent-key # Access Key Secret - from <sysdig URL>/secure/#/settings/agentInstallation
      region: au1
-     secureAPITokenSecret: sysdig-api-token # API Token Secret - from <sysdig URL>/secure/#/settings/user
      tags:
        environment: CHANGE_ME
   clusterConfig:
