@@ -8,19 +8,18 @@ spec:
     namespace: sysdig-agent
     server: 'https://kubernetes.default.svc'
   ignoreDifferences:
-  - jsonPointers:
+  - name: sysdig-clustershield
+    kind: Secret
+    jsonPointers:
     - /data/sysdig-cluster-nats-password
+  - name: sysdig-clustershield-tls-certs
     kind: Secret
-    name: sysdig-clustershield
-  - jsonPointers:
+    jsonPointers:
     - /data
-    kind: Secret
-    name: sysdig-clustershield-tls-certs
-    - group: admissionregistration.k8s.io
+  - name: sysdig-deploy-clustershield-audit
+    kind: ValidatingWebhookConfiguration
     jqPathExpressions:
     - .webhooks[].clientConfig.caBundle
-    kind: ValidatingWebhookConfiguration
-    name: sysdig-agent-admissioncontroller-webhook
   sources:
   - repoURL: 'https://charts.sysdig.com'
     chart: sysdig-deploy
