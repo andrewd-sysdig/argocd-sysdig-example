@@ -1,12 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sysdig-agent
+  name: sysdig-deploy
 spec:
   destination:
     name: ''
     namespace: sysdig-agent
     server: 'https://kubernetes.default.svc'
+  ignoreDifferences:
+  - jsonPointers:
+    - /data/js_server_password
+    kind: Secret
+    name: sysdig-agent-clusterscanner
+  - group: apps
+    jsonPointers:
+    - /spec/template/metadata/annotations/checksum~1secret
+    kind: Deployment
+    name: sysdig-agent-clusterscanner
   sources:
   - repoURL: 'https://charts.sysdig.com'
     chart: sysdig-deploy
