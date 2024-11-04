@@ -9,14 +9,13 @@ spec:
     server: 'https://kubernetes.default.svc'
   ignoreDifferences:
   - jsonPointers:
-    - /data/js_server_password
+    - /data/sysdig-cluster-nats-password
     kind: Secret
-    name: sysdig-clusterscanner
-  - group: apps
-    jsonPointers:
-    - /spec/template/metadata/annotations/checksum~1secret
-    kind: Deployment
-    name: sysdig-clusterscanner
+    name: sysdig-clustershield
+  - jsonPointers:
+    - /data/=
+    kind: Secret
+    name: sysdig-clustershield-tls-certs
   sources:
   - repoURL: 'https://charts.sysdig.com'
     chart: sysdig-deploy
