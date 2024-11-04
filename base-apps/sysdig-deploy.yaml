@@ -11,12 +11,12 @@ spec:
   - jsonPointers:
     - /data/js_server_password
     kind: Secret
-    name: sysdig-agent-clusterscanner
+    name: sysdig-clusterscanner
   - group: apps
     jsonPointers:
     - /spec/template/metadata/annotations/checksum~1secret
     kind: Deployment
-    name: sysdig-agent-clusterscanner
+    name: sysdig-clusterscanner
   sources:
   - repoURL: 'https://charts.sysdig.com'
     chart: sysdig-deploy
@@ -30,5 +30,8 @@ spec:
     ref: values
   project: default
   syncPolicy:
+    automated: 
+      prune: true
+      #selfHeal: true
     syncOptions:
       - CreateNamespace=true
