@@ -16,6 +16,11 @@ spec:
     - /data
     kind: Secret
     name: sysdig-clustershield-tls-certs
+    - group: admissionregistration.k8s.io
+    jqPathExpressions:
+    - .webhooks[].clientConfig.caBundle
+    kind: ValidatingWebhookConfiguration
+    name: sysdig-agent-admissioncontroller-webhook
   sources:
   - repoURL: 'https://charts.sysdig.com'
     chart: sysdig-deploy
