@@ -1,0 +1,7 @@
+global:
+  sysdig:
+     tags:
+       environment: production
+       cluster_type: kubeadm
+  clusterConfig:
+     name: lab2 # Name of your cluster so Sysdig can identify it

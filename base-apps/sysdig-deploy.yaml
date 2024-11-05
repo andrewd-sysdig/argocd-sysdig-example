@@ -23,11 +23,11 @@ spec:
   sources:
   - repoURL: 'https://charts.sysdig.com'
     chart: sysdig-deploy
-    targetRevision: 1.60.0
+    targetRevision: 1.67.2
     helm:
       valueFiles:
-      - $values/common/common-clustersheild-values.yaml
-      - $values/prod/prod-cluster-values.yaml
+      - $values/common/sysdig-deploy-common-clustershield-values.yaml
+      - $values/prod/sysdig-deploy-lab2.yaml
   - repoURL: 'https://github.com/andrewd-sysdig/argocd-sysdig-example.git'
     targetRevision: main
     ref: values
